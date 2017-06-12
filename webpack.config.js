@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
@@ -8,34 +7,21 @@ const extractSass = new ExtractTextPlugin({
   disable: process.env.NODE_ENV === "development"
 });
 
+if(JSON.parse(process.env.PROD_ENV || '0')) {
+  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
 module.exports = {
   target: "node",
   entry: {
     app: "./resources/js/app.js",
-    vendor: [
-      'angular',
-      'angular-animate',
-      'angular-aria',
-      'angular-messages',
-      'angular-material',
-      'angular-ui-router'
-    ],
+    vendor: "./resources/js/vendor.js",
+    firebase: "./resources/js/firebase.js",
   },
-
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'public/js')
+    path: path.resolve(__dirname, 'public/js'),
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module) {
-        // this assumes your vendor imports exist in the node_modules directory
-        return module.context && module.context.indexOf('node_modules') !== -1;
-      }
-    })
-  ],
-
   module: {
     rules: [
       {
@@ -51,18 +37,31 @@ module.exports = {
       {
         test: /\.scss$/,
         use: extractSass.extract({
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "sass-loader"
-          }],
+          use: [
+            {
+              loader: "css-loader"
+            },
+            {
+              loader: "resolve-url-loader"
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ],
           // use style-loader in development
-          fallback: "style-loader"
+          fallback: ["style-loader"]
         })
-      }
-    ]
+      },
+      {
+        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
+        loader:'file-loader?name=[name].[ext]&outputPath=../fonts/'
+      },
+    ],
   },
   plugins: [
-    extractSass
+    extractSass,
   ]
 }

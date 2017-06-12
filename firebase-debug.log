@@ -1,0 +1,36 @@
+[debug] [2017-06-12T09:50:13.077Z] ----------------------------------------------------------------------
+[debug] [2017-06-12T09:50:13.080Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\marco.paco.PERSONIV\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-06-12T09:50:13.080Z] CLI Version:  3.9.1
+[debug] [2017-06-12T09:50:13.081Z] Platform:     win32
+[debug] [2017-06-12T09:50:13.081Z] Node Version: v6.10.1
+[debug] [2017-06-12T09:50:13.081Z] Time:         Mon Jun 12 2017 17:50:13 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2017-06-12T09:50:13.081Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-06-12T09:50:13.092Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-06-12T09:50:13.093Z] > authorizing via signed-in user
+[debug] [2017-06-12T09:50:13.094Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-06-12T09:50:13.095Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/AyQyGFdcnWST_JG-fYwTrDbdj1zmIZizpSF7aUKHoP0',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Mon Jun 12 2017 17:50:13 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2017-06-12T09:50:13.345Z] <<< HTTP RESPONSE 200
+[debug] [2017-06-12T09:50:13.454Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/thriftee-c5a55  
+ Mon Jun 12 2017 17:50:13 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2017-06-12T09:50:14.604Z] <<< HTTP RESPONSE 200
+[debug] [2017-06-12T09:50:14.605Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/thriftee-c5a55/tokens  
+ Mon Jun 12 2017 17:50:14 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2017-06-12T09:50:16.337Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'c:\wamp\www\thriftee'...
+[info] 
+[debug] [2017-06-12T09:50:16.341Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/thriftee-c5a55  
+ Mon Jun 12 2017 17:50:16 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2017-06-12T09:50:17.523Z] <<< HTTP RESPONSE 200
+[debug] [2017-06-12T09:50:17.523Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/896521538035/clients/_:getWebAppConfig  
+ Mon Jun 12 2017 17:50:17 GMT+0800 (Malay Peninsula Standard Time)
+[debug] [2017-06-12T09:50:18.810Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+

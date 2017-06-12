@@ -1,5 +1,5 @@
-// All Sass
-require('./sass.js');
+// Sass
+require("../sass/app/app.scss");
 
-// All js files in app folder
+// All .js files in app folder
 require.context('../../public/app', true, /\.js$/)
