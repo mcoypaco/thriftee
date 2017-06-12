@@ -8,15 +8,18 @@ const extractSass = new ExtractTextPlugin({
 });
 
 if(JSON.parse(process.env.PROD_ENV || '0')) {
-  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin());
+  module.exports.plugins.push(new webpack.optimize.UglifyJsPlugin({
+    mangle:false
+  }));
 }
 
 module.exports = {
   target: "node",
+  devtool: "inline-sourcemap",
   entry: {
     app: "./resources/js/app.js",
     vendor: "./resources/js/vendor.js",
-    firebase: "./resources/js/firebase.js",
+    firebaseConfig: "./resources/js/firebase.config.js",
   },
   output: {
     filename: '[name].js',
@@ -54,10 +57,6 @@ module.exports = {
           // use style-loader in development
           fallback: ["style-loader"]
         })
-      },
-      {
-        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
-        loader:'file-loader?name=[name].[ext]&outputPath=../fonts/'
       },
     ],
   },

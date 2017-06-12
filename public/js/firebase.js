@@ -63,29 +63,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 210);
+/******/ 	return __webpack_require__(__webpack_require__.s = 402);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 210:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ 402:
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-(function () {
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCtCi6YMK-p0OM8PNdZUnrXHwlj-y5i2H4",
-    authDomain: "thriftee-c5a55.firebaseapp.com",
-    databaseURL: "https://thriftee-c5a55.firebaseio.com",
-    projectId: "thriftee-c5a55",
-    storageBucket: "thriftee-c5a55.appspot.com",
-    messagingSenderId: "896521538035"
-  };
-  firebase.initializeApp(config);
-})();
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'c:\\wamp\\www\\thriftee\\resources\\js\\firebase.js'\n    at Error (native)");
 
 /***/ })
 
